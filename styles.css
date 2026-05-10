@@ -1,0 +1,381 @@
+/* Base page background and Streamlit chrome cleanup */
+.stApp {
+    background:
+        radial-gradient(circle at 14% 14%, rgba(16, 185, 129, 0.12), transparent 28rem),
+        linear-gradient(90deg, rgba(12, 39, 38, 0.68), transparent 24rem),
+        #080a0f;
+    color: #ececf1;
+}
+
+header[data-testid="stHeader"],
+div[data-testid="stToolbar"],
+div[data-testid="stDecoration"],
+div[data-testid="stStatusWidget"],
+div[data-testid="stDeployButton"],
+button[kind="header"],
+[data-testid="stBaseButton-header"],
+[data-testid="stHeaderActionElements"],
+[data-testid="stActionButtonIcon"],
+.stDeployButton,
+#MainMenu,
+footer {
+    display: none !important;
+    visibility: hidden !important;
+}
+
+[data-testid="stAppViewContainer"] .block-container {
+    max-width: 980px;
+    min-height: 100vh;
+    padding-top: 5.25rem !important;
+    padding-bottom: 7.5rem !important;
+    direction: __PAGE_DIRECTION__;
+    text-align: __ALIGN_SIDE__;
+}
+
+/* Lucien-inspired top navigation and hero header */
+.app-nav {
+    align-items: center;
+    border-bottom: 1px solid rgba(49, 57, 74, 0.85);
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 3.8rem;
+    padding-bottom: 1rem;
+}
+
+.nav-brand {
+    color: #f7f7f8;
+    font-size: 0.95rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.nav-status {
+    border: 1px solid rgba(21, 230, 168, 0.34);
+    border-radius: 999px;
+    color: #15e6a8;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    padding: 0.42rem 0.72rem;
+    text-transform: uppercase;
+}
+
+h1,
+h2,
+h3,
+p,
+label {
+    letter-spacing: 0;
+}
+
+div[data-testid="stHorizontalBlock"] {
+    direction: __PAGE_DIRECTION__;
+}
+
+.hero-copy {
+    border-bottom: 1px solid #262d3a;
+    margin-bottom: 1.45rem;
+    padding: 0 0 2.25rem;
+}
+
+.app-kicker {
+    color: #15e6a8;
+    font-size: 0.76rem;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+    margin-bottom: 1.15rem;
+    text-transform: uppercase;
+}
+
+.hero-copy h1 {
+    color: #f7f7f8;
+    font-size: clamp(2.25rem, 4.6vw, 4.4rem);
+    font-weight: 800;
+    line-height: 0.98;
+    margin: 0;
+    max-width: 720px;
+}
+
+.hero-copy p {
+    color: #c8cedb;
+    font-size: 1rem;
+    line-height: 1.75;
+    margin: 1.65rem 0 0;
+    max-width: 42rem;
+}
+
+.hero-compact {
+    margin-bottom: 1rem;
+    padding: 0.25rem 0 1.25rem;
+}
+
+.hero-compact .app-kicker {
+    margin-bottom: 0.35rem;
+}
+
+.hero-compact h1 {
+    font-size: clamp(1.6rem, 2.8vw, 2.3rem);
+    line-height: 1.05;
+}
+
+div[role="radiogroup"] {
+    align-items: center;
+    backdrop-filter: blur(14px);
+    background: rgba(17, 20, 29, 0.92);
+    border: 1px solid #2c3443;
+    border-radius: 999px;
+    display: flex;
+    gap: 0.35rem;
+    justify-content: center;
+    margin: 0;
+    padding: 0.5rem 0.75rem;
+    position: fixed;
+    right: 1.5rem;
+    top: 1.1rem;
+    z-index: 9999;
+}
+
+div[role="radiogroup"] label {
+    color: #d9dce5;
+    font-size: 0.9rem;
+    font-weight: 750;
+    margin: 0;
+    min-height: 1.6rem;
+}
+
+hr {
+    display: none;
+}
+
+/* Example buttons and general Streamlit button styling */
+.section-title {
+    color: #f5f7fb;
+    font-size: 0.86rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    margin: 0.2rem 0 0.9rem;
+    text-transform: uppercase;
+}
+
+.stButton > button {
+    background: rgba(17, 20, 29, 0.78);
+    border: 1px solid #31394a;
+    border-radius: 8px;
+    color: #ececf1;
+    font-weight: 700;
+    min-height: 3rem;
+    padding: 0.45rem 0.9rem;
+    transition: border-color 120ms ease, background 120ms ease, transform 120ms ease;
+}
+
+div[data-testid="stHorizontalBlock"] .stButton > button {
+    width: 100%;
+}
+
+.stButton > button:hover {
+    background: rgba(21, 230, 168, 0.07);
+    border-color: #15e6a8;
+    color: #ffffff;
+    transform: translateY(-1px);
+}
+
+.stButton > button:active {
+    transform: translateY(0);
+}
+
+/* Chat message bubbles */
+.chat-row {
+    direction: ltr;
+    display: flex;
+    width: 100%;
+    margin: 1.15rem 0;
+}
+
+.user-row {
+    justify-content: flex-end;
+}
+
+.assistant-row {
+    justify-content: flex-start;
+}
+
+.chat-bubble {
+    border-radius: 14px;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.26);
+    line-height: 1.7;
+    max-width: min(78%, 680px);
+    overflow-wrap: anywhere;
+    padding: 1.05rem 1.15rem;
+    word-wrap: break-word;
+}
+
+.chat-bubble[dir="rtl"] {
+    text-align: right;
+}
+
+.chat-bubble[dir="ltr"] {
+    text-align: left;
+}
+
+.user-bubble {
+    background: #13b58d;
+    border-bottom-right-radius: 4px;
+    color: white;
+}
+
+.assistant-bubble {
+    background: #1a1f2a;
+    border: 1px solid #343d50;
+    border-bottom-left-radius: 4px;
+    color: #ececf1;
+    min-width: min(100%, 560px);
+}
+
+.chat-bubble p {
+    margin: 0;
+}
+
+.chat-bottom-spacer {
+    height: 5.25rem;
+}
+
+/* Structured AI analysis card inside assistant bubbles */
+.analysis-card h4 {
+    color: #ffffff;
+    font-size: 0.95rem;
+    letter-spacing: 0.02em;
+    margin: 1rem 0 0.3rem;
+}
+
+.analysis-card h4:first-child {
+    margin-top: 0;
+}
+
+.analysis-card ul,
+.analysis-card ol {
+    margin-bottom: 0.45rem;
+    margin-top: 0.25rem;
+    padding-inline-start: 1.4rem;
+}
+
+.analysis-card li {
+    margin: 0.2rem 0;
+}
+
+.risk-pill {
+    border-radius: 999px;
+    display: inline-block;
+    font-size: 0.82rem;
+    font-weight: 800;
+    padding: 0.28rem 0.78rem;
+}
+
+.risk-low {
+    background: #143d2a;
+    color: #86efac;
+}
+
+.risk-medium {
+    background: #46320d;
+    color: #facc15;
+}
+
+.risk-high {
+    background: #4c1717;
+    color: #fca5a5;
+}
+
+/* Bottom prompt form */
+div[data-testid="stForm"] {
+    background: transparent;
+    border: 0;
+    padding: 0;
+}
+
+div[data-testid="stForm"] div[data-testid="stHorizontalBlock"] {
+    align-items: center;
+    background: rgba(20, 24, 33, 0.96);
+    border: 1px solid #343d50;
+    border-radius: 12px;
+    box-shadow: 0 22px 55px rgba(0, 0, 0, 0.32);
+    direction: __PAGE_DIRECTION__;
+    gap: 0.25rem;
+    padding: 0.25rem 0.35rem;
+}
+
+div[data-testid="stForm"] [data-testid="stTextInput"] {
+    direction: auto;
+}
+
+div[data-testid="stForm"] [data-testid="stTextInput"] > div {
+    border: 0;
+    background: transparent;
+}
+
+div[data-testid="stForm"] input {
+    background: transparent !important;
+    border: 0 !important;
+    box-shadow: none !important;
+    color: #f4f4f5 !important;
+    direction: auto;
+    font-size: 1rem;
+    min-height: 2.9rem;
+    text-align: start;
+}
+
+div[data-testid="stForm"] input::placeholder {
+    color: #8f96a8;
+}
+
+div[data-testid="stForm"] .stButton > button {
+    background: transparent;
+    border: 0 !important;
+    border-radius: 8px;
+    color: #15e6a8 !important;
+    font-size: 1.35rem;
+    font-weight: 900;
+    line-height: 1;
+    min-height: 2.9rem;
+    padding: 0 !important;
+}
+
+div[data-testid="stForm"] .stButton > button:hover {
+    background: transparent;
+    border: 0 !important;
+    color: #10a37f !important;
+    transform: none;
+}
+
+div[data-testid="stForm"] .stButton > button p {
+    color: inherit;
+    font-size: 1.35rem;
+    font-weight: 900;
+    line-height: 1;
+    margin: 0;
+}
+
+@media (max-width: 760px) {
+    [data-testid="stAppViewContainer"] .block-container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+        padding-top: 4.5rem !important;
+    }
+
+    .hero-copy h1 {
+        font-size: 2.1rem;
+    }
+
+    .hero-copy {
+        padding-top: 1rem;
+    }
+
+    div[role="radiogroup"] {
+        right: 1rem;
+        top: 0.85rem;
+    }
+
+    .chat-bubble {
+        max-width: 92%;
+    }
+}
